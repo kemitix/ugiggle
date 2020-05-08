@@ -9,6 +9,7 @@
         <module>parent</module>
         <module>service</module>
         <module>runner</module>
+        <module>trello</module>
     </modules>
 
     <groupId>net.kemitix.ugiggle</groupId>

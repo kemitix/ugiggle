@@ -17,7 +17,7 @@
         <!-- ugiggle -->
         <dependency>
             <groupId>net.kemitix.ugiggle</groupId>
-            <artifactId>ugiggle-service</artifactId>
+            <artifactId>ugiggle-trello</artifactId>
         </dependency>
 
         <!-- quarkus -->
