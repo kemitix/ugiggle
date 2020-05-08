@@ -2,6 +2,7 @@ package net.kemitix.ugiggle;
 
 import io.quarkus.runtime.QuarkusApplication;
 import io.quarkus.runtime.annotations.QuarkusMain;
+import net.kemitix.ugiggle.service.SendReadingListService;
 
 import javax.inject.Inject;
 import java.util.logging.Logger;
@@ -13,20 +14,23 @@ public class Main implements QuarkusApplication {
             Logger.getLogger(
                     Main.class.getName());
 
-    private GreetingService service;
+    private SendReadingListService service;
 
     public Main() {
     }
 
     @Inject
-    public Main(GreetingService service) {
+    public Main(SendReadingListService service) {
         this.service = service;
     }
 
     @Override
-    public int run(String... args) throws Exception {
-        LOG.info(service.hello());
-        LOG.info(service.goodbye());
+    public int run(String... args) {
+        try {
+            service.run(args);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return 0;
     }
 }
