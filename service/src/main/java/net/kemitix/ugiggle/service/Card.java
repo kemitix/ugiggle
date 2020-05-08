@@ -6,4 +6,6 @@ public interface Card {
     Stream<Attachment> findAttachments();
 
     String getName();
+
+    boolean isNotTarget();
 }
