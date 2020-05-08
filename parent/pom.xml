@@ -2,11 +2,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-    <artifactId>ugiggle-root</artifactId>
-    <groupId>net.kemitix.ugiggle</groupId>
-    <version>DEV-SNAPSHOT</version>
-  </parent>
-
+        <groupId>net.kemitix</groupId>
+        <artifactId>kemitix-parent</artifactId>
+        <version>5.3.0</version>
+        <relativePath/>
+    </parent>
 
     <version>DEV-SNAPSHOT</version>
     <packaging>pom</packaging>
@@ -20,6 +20,10 @@
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
+
+        <tiles-maven-plugin.version>2.16</tiles-maven-plugin.version>
+        <kemitix-maven-tiles.version>2.5.0</kemitix-maven-tiles.version>
+        <kemitix-checkstyle.version>5.4.0</kemitix-checkstyle.version>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -56,24 +60,26 @@
         </dependencies>
     </dependencyManagement>
 
-
     <build>
         <plugins>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>${maven-compiler-plugin.version}</version>
+                <groupId>io.repaint.maven</groupId>
+                <artifactId>tiles-maven-plugin</artifactId>
+                <version>${tiles-maven-plugin.version}</version>
+                <extensions>true</extensions>
                 <configuration>
-                    <compilerArgs>
-                        <arg>-Xlint:unchecked</arg>
-                    </compilerArgs>
-                    <showDeprecation>true</showDeprecation>
-                    <showWarnings>true</showWarnings>
-                    <source>${java.version}</source>
-                    <target>${java.version}</target>
-                    <encoding>${project.build.sourceEncoding}</encoding>
+                    <tiles>
+                        <tile>net.kemitix.tiles:maven-plugins:${kemitix-maven-tiles.version}</tile>
+                        <tile>net.kemitix.tiles:enforcer:${kemitix-maven-tiles.version}</tile>
+                        <tile>net.kemitix.tiles:compiler-jdk-11:${kemitix-maven-tiles.version}</tile>
+                        <tile>net.kemitix.tiles:pmd:${kemitix-maven-tiles.version}</tile>
+                        <tile>net.kemitix.tiles:testing:${kemitix-maven-tiles.version}</tile>
+                        <tile>net.kemitix.tiles:coverage:${kemitix-maven-tiles.version}</tile>
+                        <tile>net.kemitix.tiles:pitest:${kemitix-maven-tiles.version}</tile>
+                        <tile>net.kemitix.checkstyle:tile:${kemitix-checkstyle.version}</tile>
+                    </tiles>
                 </configuration>
-            </plugin><!-- maven-compiler-plugin -->
+            </plugin>
         </plugins>
     </build>
 
