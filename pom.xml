@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>parent</module>
+        <module>service</module>
+        <module>runner</module>
+    </modules>
+
+    <groupId>net.kemitix.ugiggle</groupId>
+    <artifactId>ugiggle-root</artifactId>
+    <version>DEV-SNAPSHOT</version>
+
+    <name>ugiggle</name>
+
+    <properties>
+        <java.version>11</java.version>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+        <maven.install.skip>true</maven.install.skip>
+        <maven-graph.plugin.version>1.45</maven-graph.plugin.version>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.fusesource.mvnplugins</groupId>
+                <artifactId>maven-graph-plugin</artifactId>
+                <version>${maven-graph.plugin.version}</version>
+                <executions>
+                    <execution>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>reactor</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <hideTransitive>true</hideTransitive>
+                    <hideVersion>true</hideVersion>
+                    <target>${project.basedir}/doc/images/reactor-graph.png</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
