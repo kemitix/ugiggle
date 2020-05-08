@@ -41,6 +41,7 @@
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <quarkus.version>1.4.2.Final</quarkus.version>
 
+        <surefire-plugin.version>2.22.2</surefire-plugin.version>
         <!-- disabled until there is some code to mutate -->
         <pitest.skip>true</pitest.skip>
     </properties>
