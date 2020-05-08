@@ -19,6 +19,10 @@
             <groupId>net.kemitix.ugiggle</groupId>
             <artifactId>ugiggle-trello</artifactId>
         </dependency>
+        <dependency>
+            <groupId>net.kemitix.ugiggle</groupId>
+            <artifactId>ugiggle-amazon-ses</artifactId>
+        </dependency>
 
         <!-- quarkus -->
         <dependency>

@@ -10,6 +10,7 @@
         <module>service</module>
         <module>runner</module>
         <module>trello</module>
+        <module>amazon-ses</module>
     </modules>
 
     <groupId>net.kemitix.ugiggle</groupId>
