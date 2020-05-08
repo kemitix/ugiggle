@@ -10,8 +10,7 @@
     </parent>
     <version>DEV-SNAPSHOT</version>
 
-    <artifactId>q-runner</artifactId>
-    <name>q-runner</name>
+    <artifactId>runner</artifactId>
 
     <dependencies>
         <!-- ugiggle -->

@@ -1,10 +1,10 @@
 VERSION=DEV-SNAPSHOT
 
 run-dev:
-	mvn -pl runner-quarkus quarkus:dev
+	mvn -pl runner quarkus:dev
 
 native:
 	mvn verify -Pnative
 
 run-native:
-	./runner-quarkus/target/naolo-runner-quarkus-${VERSION}-runner
+	./runner/target/ugiggle-runner-${VERSION}-runner

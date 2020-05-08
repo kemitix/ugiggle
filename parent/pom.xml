@@ -37,7 +37,7 @@
             </dependency>
             <dependency>
                 <groupId>net.kemitix.ugiggle</groupId>
-                <artifactId>q-runner</artifactId>
+                <artifactId>runner</artifactId>
                 <version>${project.version}</version>
             </dependency>
 
