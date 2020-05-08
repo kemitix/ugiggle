@@ -15,6 +15,7 @@
 
     <properties>
         <pitest.skip>true</pitest.skip>
+        <trello-java-wrapper.version>0.13</trello-java-wrapper.version>
     </properties>
 
     <dependencies>
@@ -28,6 +29,12 @@
         <dependency>
             <groupId>net.kemitix.ugiggle</groupId>
             <artifactId>ugiggle-service</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.taskadapter</groupId>
+            <artifactId>trello-java-wrapper</artifactId>
+            <version>${trello-java-wrapper.version}</version>
         </dependency>
 
         <dependency>

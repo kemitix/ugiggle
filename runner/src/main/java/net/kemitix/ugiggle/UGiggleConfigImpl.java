@@ -9,7 +9,10 @@ public class UGiggleConfigImpl implements UGiggleConfig {
     private String slushList;
     private String recipient;
     private String targetName;
+    private String trelloKey;
+    private String trelloAccessToken;
 
+    @Override
     public String getSlushBoard() {
         return slushBoard;
     }
@@ -18,6 +21,7 @@ public class UGiggleConfigImpl implements UGiggleConfig {
         this.slushBoard = slushBoard;
     }
 
+    @Override
     public String getSlushList() {
         return slushList;
     }
@@ -26,6 +30,7 @@ public class UGiggleConfigImpl implements UGiggleConfig {
         this.slushList = slushList;
     }
 
+    @Override
     public String getRecipient() {
         return recipient;
     }
@@ -34,11 +39,30 @@ public class UGiggleConfigImpl implements UGiggleConfig {
         this.recipient = recipient;
     }
 
+    @Override
     public String getTargetName() {
         return targetName;
     }
 
     public void setTargetName(String targetName) {
         this.targetName = targetName;
+    }
+
+    @Override
+    public String getTrelloKey() {
+        return trelloKey;
+    }
+
+    public void setTrelloKey(String trelloKey) {
+        this.trelloKey = trelloKey;
+    }
+
+    @Override
+    public String getTrelloAccessToken() {
+        return trelloAccessToken;
+    }
+
+    public void setTrelloAccessToken(String trelloAccessToken) {
+        this.trelloAccessToken = trelloAccessToken;
     }
 }

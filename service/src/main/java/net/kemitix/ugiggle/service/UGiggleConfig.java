@@ -9,4 +9,8 @@ public interface UGiggleConfig {
     String getRecipient();
 
     String getTargetName();
+
+    String getTrelloKey();
+
+    String getTrelloAccessToken();
 }
