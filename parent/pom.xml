@@ -12,7 +12,7 @@
     <packaging>pom</packaging>
 
     <groupId>net.kemitix.ugiggle</groupId>
-    <artifactId>parent</artifactId>
+    <artifactId>ugiggle-parent</artifactId>
     <name>parent</name>
 
     <properties>
@@ -32,12 +32,12 @@
         <dependencies>
             <dependency>
                 <groupId>net.kemitix.ugiggle</groupId>
-                <artifactId>service</artifactId>
+                <artifactId>ugiggle-service</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>net.kemitix.ugiggle</groupId>
-                <artifactId>runner</artifactId>
+                <artifactId>ugiggle-runner</artifactId>
                 <version>${project.version}</version>
             </dependency>
 

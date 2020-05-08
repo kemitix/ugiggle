@@ -4,13 +4,13 @@
 
     <parent>
         <groupId>net.kemitix.ugiggle</groupId>
-        <artifactId>parent</artifactId>
+        <artifactId>ugiggle-parent</artifactId>
         <version>DEV-SNAPSHOT</version>
         <relativePath>../parent</relativePath>
     </parent>
     <version>DEV-SNAPSHOT</version>
 
-    <artifactId>service</artifactId>
+    <artifactId>ugiggle-service</artifactId>
     <name>service</name>
 
     <dependencies>

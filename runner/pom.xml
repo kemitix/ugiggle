@@ -4,19 +4,20 @@
 
     <parent>
         <groupId>net.kemitix.ugiggle</groupId>
-        <artifactId>parent</artifactId>
+        <artifactId>ugiggle-parent</artifactId>
         <version>DEV-SNAPSHOT</version>
         <relativePath>../parent</relativePath>
     </parent>
     <version>DEV-SNAPSHOT</version>
 
-    <artifactId>runner</artifactId>
+    <artifactId>ugiggle-runner</artifactId>
+    <name>runner</name>
 
     <dependencies>
         <!-- ugiggle -->
         <dependency>
             <groupId>net.kemitix.ugiggle</groupId>
-            <artifactId>service</artifactId>
+            <artifactId>ugiggle-service</artifactId>
         </dependency>
 
         <!-- quarkus -->

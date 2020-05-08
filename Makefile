@@ -1,5 +1,9 @@
 VERSION=DEV-SNAPSHOT
 
+
+install:
+	mvn install
+
 run-dev:
 	mvn -pl runner quarkus:dev
 
