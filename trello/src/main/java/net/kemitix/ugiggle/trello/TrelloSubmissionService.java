@@ -43,7 +43,7 @@ class TrelloSubmissionService implements ReadingListService {
                 .flatMap(b -> findLists(b, list))
                 .flatMap(this::findCards)
                 .takeWhile(this::isNotTarget)
-                .map(card -> TrelloCard.create(card,trello, config));
+                .map(card -> TrelloCard.create(card, trello, config));
     }
 
     private Stream<Board> findBoard(String name) {
