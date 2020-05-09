@@ -15,7 +15,7 @@
 
     <groupId>net.kemitix.ugiggle</groupId>
     <artifactId>ugiggle-root</artifactId>
-    <version>DEV-SNAPSHOT</version>
+    <version>1.0.0</version>
 
     <name>ugiggle</name>
 
