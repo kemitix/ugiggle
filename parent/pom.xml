@@ -15,6 +15,17 @@
     <artifactId>ugiggle-parent</artifactId>
     <name>parent</name>
 
+    <scm>
+        <connection>scm:git:https://github.com/kemitix/ugiggle.git</connection>
+        <developerConnection>scm:git:git@github.com:kemitix/ugiggle.git</developerConnection>
+        <url>https://github.com/kemitix/ugiggle</url>
+    </scm>
+
+    <issueManagement>
+        <system>GitHub Issues</system>
+        <url>https://github.com/kemitix/ugiggle/issues</url>
+    </issueManagement>
+
     <properties>
         <java.version>11</java.version>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
