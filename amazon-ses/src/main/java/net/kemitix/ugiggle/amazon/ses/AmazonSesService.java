@@ -44,11 +44,10 @@ public class AmazonSesService implements EmailService {
     public void send(Attachment attachment) throws MessagingException, IOException {
         String recipient = config.getRecipient();
         SendRawEmailRequest request = request(recipient, attachment);
-        LOG.info(String.format("Sending %s to %s",
-                attachment.getFileName().getName(), recipient));
+        String name = attachment.getFileName().getName();
+        LOG.info(String.format("Sending %s to %s", name, recipient));
         sesService.sendRawEmail(request);
-        LOG.info(String.format("Sent %s to %s",
-                attachment.getFileName().getName(), recipient));
+        LOG.info(String.format("Sent %s to %s", name, recipient));
     }
 
     private SendRawEmailRequest request(
