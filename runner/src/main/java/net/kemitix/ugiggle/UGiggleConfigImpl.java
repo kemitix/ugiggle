@@ -38,7 +38,7 @@ public class UGiggleConfigImpl implements UGiggleConfig {
     }
 
     public void setRecipient(String recipient) {
-        this.recipient = recipient;
+        this.recipient = System.getenv("UGIGGLE_RECIPIENT");
     }
 
     @Override
@@ -56,7 +56,7 @@ public class UGiggleConfigImpl implements UGiggleConfig {
     }
 
     public void setTrelloKey(String trelloKey) {
-        this.trelloKey = trelloKey;
+        this.trelloKey = System.getenv("TRELLO_KEY");
     }
 
     @Override
@@ -65,7 +65,7 @@ public class UGiggleConfigImpl implements UGiggleConfig {
     }
 
     public void setTrelloAccessToken(String trelloAccessToken) {
-        this.trelloAccessToken = trelloAccessToken;
+        this.trelloAccessToken = System.getenv("TRELLO_SECRET");
     }
 
     @Override
@@ -74,7 +74,7 @@ public class UGiggleConfigImpl implements UGiggleConfig {
     }
 
     public void setAmazonSesRegion(String amazonSesRegion) {
-        this.amazonSesRegion = amazonSesRegion;
+        this.amazonSesRegion = System.getenv("AMAZON_SES_REGION");
     }
 
     @Override
@@ -83,6 +83,6 @@ public class UGiggleConfigImpl implements UGiggleConfig {
     }
 
     public void setSender(String sender) {
-        this.sender = sender;
+        this.sender = System.getenv("UGIGGLE_SENDER");
     }
 }
