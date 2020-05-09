@@ -1,6 +1,5 @@
 package net.kemitix.ugiggle.trello;
 
-import com.julienvey.trello.NotFoundException;
 import com.julienvey.trello.Trello;
 import com.julienvey.trello.domain.Board;
 import com.julienvey.trello.domain.Card;
@@ -47,27 +46,26 @@ class TrelloSubmissionService implements SubmissionService {
                 .map(card -> TrelloCard.create(card,trello, config));
     }
 
-    private boolean isNotTarget(Card card) {
-        return !config.getTargetName().equals(card.getName());
-    }
-
-    private Stream<Card> findCards(TList tList) {
-        return tList.getCards().stream();
+    private Stream<Board> findBoard(String name) {
+        LOG.info("Find board: "+ name);
+        return trello.getMemberBoards("me").stream()
+                .filter(board -> name.equals(board.getName()))
+                .peek(board -> LOG.info("Board: " + board.getName()));
     }
 
     private Stream<TList> findLists(Board board, String name) {
-        return board.getLists().stream()
-                .filter(tList -> tList.getName().equals(name));
+        LOG.info("Find list: " + name);
+        return trello.getBoardLists(board.getId()).stream()
+                .filter(tList -> name.equals(tList.getName()))
+                .peek(list -> LOG.info("List: " + list.getName()));
     }
 
-    private Stream<Board> findBoard(String name) {
-        try {
-            return Stream.of(trello.getBoard(name));
-        } catch (NotFoundException nfe) {
-            LOG.warning(String.format(
-                    "Board Not Found: %s",
-                    name));
-            return Stream.empty();
-        }
+    private Stream<Card> findCards(TList tList) {
+        return tList.getCards().stream()
+                .peek(card -> LOG.info("Card     : " + card.getName()));
+    }
+
+    private boolean isNotTarget(Card card) {
+        return !config.getTargetName().equals(card.getName());
     }
 }
