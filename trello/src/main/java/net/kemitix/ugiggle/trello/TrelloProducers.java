@@ -9,7 +9,7 @@ import net.kemitix.ugiggle.service.UGiggleConfig;
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.inject.Produces;
 
-class TrelloProducers {
+public class TrelloProducers {
 
     @Produces
     @ApplicationScoped

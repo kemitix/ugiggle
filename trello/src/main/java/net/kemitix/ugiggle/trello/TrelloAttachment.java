@@ -14,7 +14,7 @@ import java.nio.file.Files;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-class TrelloAttachment implements Attachment {
+public class TrelloAttachment implements Attachment {
     private static final String[] EXTENSIONS = new String[]{"doc", "docx", "odt"};
     private final com.julienvey.trello.domain.Attachment attachment;
     private final Card card;
