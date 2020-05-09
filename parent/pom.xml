@@ -29,7 +29,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
         <junit.version>5.6.1</junit.version>
-        <assertj.version>3.15.0</assertj.version>
+        <assertj.version>3.16.1</assertj.version>
     </properties>
 
     <dependencyManagement>
