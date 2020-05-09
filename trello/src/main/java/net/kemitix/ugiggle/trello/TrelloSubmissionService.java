@@ -14,7 +14,7 @@ import java.util.logging.Logger;
 import java.util.stream.Stream;
 
 @ApplicationScoped
-class TrelloSubmissionService implements ReadingListService {
+public class TrelloSubmissionService implements ReadingListService {
 
     private static final Logger LOG =
             Logger.getLogger(

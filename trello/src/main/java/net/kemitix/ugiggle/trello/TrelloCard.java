@@ -7,7 +7,7 @@ import net.kemitix.ugiggle.service.UGiggleConfig;
 
 import java.util.stream.Stream;
 
-class TrelloCard implements Submission {
+public class TrelloCard implements Submission {
     private final com.julienvey.trello.domain.Card tcard;
     private final Trello trello;
     private final UGiggleConfig config;
