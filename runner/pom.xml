@@ -17,7 +17,11 @@
         <!-- ugiggle -->
         <dependency>
             <groupId>net.kemitix.ugiggle</groupId>
-            <artifactId>ugiggle-service</artifactId>
+            <artifactId>ugiggle-trello</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>net.kemitix.ugiggle</groupId>
+            <artifactId>ugiggle-amazon-ses</artifactId>
         </dependency>
 
         <!-- quarkus -->
@@ -25,13 +29,6 @@
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-arc</artifactId>
         </dependency>
-        <dependency>
-            <groupId>io.quarkus</groupId>
-            <artifactId>quarkus-junit5</artifactId>
-            <scope>test</scope>
-        </dependency>
-
-        <!-- other -->
 
     </dependencies>
 

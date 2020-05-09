@@ -44,6 +44,16 @@
                 <artifactId>ugiggle-runner</artifactId>
                 <version>${project.version}</version>
             </dependency>
+            <dependency>
+                <groupId>net.kemitix.ugiggle</groupId>
+                <artifactId>ugiggle-trello</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>net.kemitix.ugiggle</groupId>
+                <artifactId>ugiggle-amazon-ses</artifactId>
+                <version>DEV-SNAPSHOT</version>
+            </dependency>
 
             <dependency>
                 <groupId>org.junit</groupId>
