@@ -15,6 +15,7 @@
 
     <properties>
         <pitest.skip>true</pitest.skip>
+        <maven.javadoc.skip>true</maven.javadoc.skip>
         <trello-java-wrapper.version>0.13</trello-java-wrapper.version>
     </properties>
 
