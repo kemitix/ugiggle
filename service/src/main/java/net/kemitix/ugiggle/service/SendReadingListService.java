@@ -2,12 +2,11 @@ package net.kemitix.ugiggle.service;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
-import java.util.function.Consumer;
 
 @ApplicationScoped
 public class SendReadingListService {
 
-    private BoardService boardService;
+    private SubmissionService submissionService;
     private EmailService emailService;
 
     public SendReadingListService() {
@@ -15,19 +14,16 @@ public class SendReadingListService {
 
     @Inject
     public SendReadingListService(
-            BoardService boardService,
+            SubmissionService submissionService,
             EmailService emailService
     ) {
-        this.boardService = boardService;
+        this.submissionService = submissionService;
         this.emailService = emailService;
     }
 
     public void run(String[] args) {
-        boardService.findBoard()
-                .flatMap(Board::findList)
-                .flatMap(CardList::stream)
-                .takeWhile(Card::isNotTarget)
-                .flatMap(Card::findAttachments)
+        submissionService.getReadingList()
+                .flatMap(Submission::findAttachments)
                 .forEach(emailService::send);
     }
 

@@ -2,10 +2,8 @@ package net.kemitix.ugiggle.service;
 
 import java.util.stream.Stream;
 
-public interface Card {
+public interface Submission {
     Stream<Attachment> findAttachments();
 
     String getName();
-
-    boolean isNotTarget();
 }
