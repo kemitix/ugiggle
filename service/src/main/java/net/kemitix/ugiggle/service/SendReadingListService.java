@@ -6,7 +6,7 @@ import javax.inject.Inject;
 @ApplicationScoped
 public class SendReadingListService {
 
-    private SubmissionService submissionService;
+    private ReadingListService readingListService;
     private EmailService emailService;
 
     public SendReadingListService() {
@@ -14,15 +14,15 @@ public class SendReadingListService {
 
     @Inject
     public SendReadingListService(
-            SubmissionService submissionService,
+            ReadingListService readingListService,
             EmailService emailService
     ) {
-        this.submissionService = submissionService;
+        this.readingListService = readingListService;
         this.emailService = emailService;
     }
 
     public void run(String[] args) {
-        submissionService.getReadingList()
+        readingListService.getReadingList()
                 .flatMap(Submission::findAttachments)
                 .forEach(emailService::send);
     }

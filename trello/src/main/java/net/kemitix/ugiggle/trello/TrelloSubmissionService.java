@@ -5,7 +5,7 @@ import com.julienvey.trello.domain.Board;
 import com.julienvey.trello.domain.Card;
 import com.julienvey.trello.domain.TList;
 import net.kemitix.ugiggle.service.Submission;
-import net.kemitix.ugiggle.service.SubmissionService;
+import net.kemitix.ugiggle.service.ReadingListService;
 import net.kemitix.ugiggle.service.UGiggleConfig;
 
 import javax.enterprise.context.ApplicationScoped;
@@ -14,7 +14,7 @@ import java.util.logging.Logger;
 import java.util.stream.Stream;
 
 @ApplicationScoped
-class TrelloSubmissionService implements SubmissionService {
+class TrelloSubmissionService implements ReadingListService {
 
     private static final Logger LOG =
             Logger.getLogger(

@@ -2,6 +2,6 @@ package net.kemitix.ugiggle.service;
 
 import java.util.stream.Stream;
 
-public interface SubmissionService {
+public interface ReadingListService {
     Stream<? extends Submission> getReadingList();
 }
