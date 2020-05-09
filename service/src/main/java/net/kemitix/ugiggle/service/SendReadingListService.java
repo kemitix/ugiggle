@@ -2,6 +2,8 @@ package net.kemitix.ugiggle.service;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
+import javax.mail.MessagingException;
+import java.io.IOException;
 
 @ApplicationScoped
 public class SendReadingListService {
@@ -24,7 +26,15 @@ public class SendReadingListService {
     public void run(String[] args) {
         readingListService.getReadingList()
                 .flatMap(Submission::findAttachments)
-                .forEach(emailService::send);
+                .forEach(this::sendEmail);
+    }
+
+    private void sendEmail(Attachment attachment) {
+        try {
+            emailService.send(attachment);
+        } catch (MessagingException | IOException e) {
+            e.printStackTrace();
+        }
     }
 
 }

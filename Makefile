@@ -1,19 +1,19 @@
 VERSION=DEV-SNAPSHOT
 
+PARAMS=		-Dugiggle.trello-key=${TRELLO_KEY} \
+       		-Dugiggle.trello-access-token=${TRELLO_SECRET} \
+       		-Dugiggle.amazon-ses-region=${AMAZON_SES_REGION} \
+       		-Dugiggle.recipient=${UGIGGLE_RECIPIENT} \
+       		-Dugiggle.sender=${UGIGGLE_SENDER}
 
 install:
 	mvn install
 
 run-dev:
-	mvn -pl runner quarkus:dev \
-		-Dugiggle.trello-key=${TRELLO_KEY} \
-		-Dugiggle.trello-access-token=${TRELLO_SECRET}
+	mvn -pl runner quarkus:dev ${PARAMS}
 
 native:
 	mvn verify -Pnative
 
 run-native:
-	./runner/target/ugiggle-runner-${VERSION}-runner \
-		-Dugiggle.trello-key=${TRELLO_KEY} \
-		-Dugiggle.trello-access-token=${TRELLO_SECRET}
-
+	./runner/target/ugiggle-runner-${VERSION}-runner ${PARAMS}

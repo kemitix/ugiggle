@@ -31,8 +31,7 @@ class TrelloCard implements Submission {
     }
 
     public Stream<Attachment> findAttachments() {
-        return
-        trello.getCardAttachments(tcard.getId()).stream()
+        return trello.getCardAttachments(tcard.getId()).stream()
                 .map(TrelloAttachment::create);
     }
 
