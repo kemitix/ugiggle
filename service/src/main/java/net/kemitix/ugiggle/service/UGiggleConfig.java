@@ -13,4 +13,8 @@ public interface UGiggleConfig {
     String getTrelloKey();
 
     String getTrelloAccessToken();
+
+    String getAmazonSesRegion();
+
+    String getSender();
 }

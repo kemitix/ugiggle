@@ -11,6 +11,8 @@ public class UGiggleConfigImpl implements UGiggleConfig {
     private String targetName;
     private String trelloKey;
     private String trelloAccessToken;
+    private String amazonSesRegion;
+    private String sender;
 
     @Override
     public String getSlushBoard() {
@@ -64,5 +66,23 @@ public class UGiggleConfigImpl implements UGiggleConfig {
 
     public void setTrelloAccessToken(String trelloAccessToken) {
         this.trelloAccessToken = trelloAccessToken;
+    }
+
+    @Override
+    public String getAmazonSesRegion() {
+        return amazonSesRegion;
+    }
+
+    public void setAmazonSesRegion(String amazonSesRegion) {
+        this.amazonSesRegion = amazonSesRegion;
+    }
+
+    @Override
+    public String getSender() {
+        return sender;
+    }
+
+    public void setSender(String sender) {
+        this.sender = sender;
     }
 }
