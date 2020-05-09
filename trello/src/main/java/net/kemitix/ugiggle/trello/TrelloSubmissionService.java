@@ -61,8 +61,9 @@ class TrelloSubmissionService implements SubmissionService {
     }
 
     private Stream<Card> findCards(TList tList) {
-        return tList.getCards().stream()
-                .peek(card -> LOG.info("Card     : " + card.getName()));
+        LOG.info("Find cards");
+        return trello.getListCards(tList.getId()).stream()
+                .peek(card -> LOG.info("Card: " + card.getName()));
     }
 
     private boolean isNotTarget(Card card) {
