@@ -1,4 +1,4 @@
-# ubiquitous-giggle
+# ugiggle
 Send trello cards, with attachments, via email. Used to send slush to my kindle.
 
 ## Required Environment Variables
