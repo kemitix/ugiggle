@@ -1,5 +1,6 @@
 package net.kemitix.ugiggle.converter.odt;
 
+import net.kemitix.ugiggle.AttachmentDirectory;
 import net.kemitix.ugiggle.service.Attachment;
 import net.kemitix.ugiggle.service.AttachmentConverter;
 import net.kemitix.ugiggle.service.LocalAttachment;
@@ -21,6 +22,9 @@ public class OdtToHtmlAttachmentConverter
             Logger.getLogger(
                     OdtToHtmlAttachmentConverter.class.getName());
 
+    @Inject
+    AttachmentDirectory attachmentDirectory;
+
     @Override
     public boolean canHandle(Attachment attachment) {
         return attachment.getFileName()
@@ -30,23 +34,23 @@ public class OdtToHtmlAttachmentConverter
 
     @Override
     public Optional<Attachment> convert(Attachment attachment) {
-        String name = attachment.getFileName().getName();
+        Attachment localAttachment = attachment.download();
+        String name = localAttachment.getFileName().getName();
         LOG.info("Converting from " + name);
         String htmlName = name.substring(0, name.length() - 3) + "html";
-        LOG.info("Converting  to  " + htmlName);
-        try {
-            // 1) Load ODT into ODFDOM OdfTextDocument
-            InputStream in = new FileInputStream(attachment.getFileName());
-            OdfTextDocument document = OdfTextDocument.loadDocument(in);
-            // 2) Prepare XHTML options (here we set the IURIResolver to load images from a "Pictures" folder)
-            XHTMLOptions options = XHTMLOptions.create();
-            // 3) Convert OdfTextDocument to XHTML
-            File htmlFile = new File(htmlName);
+        File htmlFile = attachmentDirectory.createFile(new File(htmlName));
+        LOG.info("Converting  to  " + htmlFile.getAbsolutePath());
+        try (
+            InputStream in = new FileInputStream(localAttachment.getFileName());
             OutputStream out = new FileOutputStream(htmlFile);
-            XHTMLConverter.getInstance().convert(document, out, options);
-            // Convert to Attachment
-            LOG.info("Converted   to  " + htmlName);
-            return Optional.of(new LocalAttachment(htmlFile));
+        ) {
+            OdfTextDocument document = OdfTextDocument.loadDocument(in);
+            XHTMLConverter.getInstance().convert(document, out, XHTMLOptions.create());
+            if (htmlFile.exists()) {
+                return Optional.of(new LocalAttachment(htmlFile));
+            } else {
+                throw new FileNotFoundException(htmlFile.getAbsolutePath());
+            }
         } catch (Exception e) {
             e.printStackTrace();
             return Optional.empty();
