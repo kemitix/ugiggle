@@ -12,8 +12,14 @@ import java.net.URI;
 import java.net.URL;
 import java.nio.channels.Channels;
 import java.nio.file.Files;
+import java.util.logging.Logger;
 
 public class TrelloAttachment implements Attachment {
+
+    private static final Logger LOG =
+            Logger.getLogger(
+                    TrelloAttachment.class.getName());
+
     private static final String[] EXTENSIONS = new String[]{"doc", "docx", "odt"};
     private final com.julienvey.trello.domain.Attachment attachment;
     private final Card card;
@@ -53,6 +59,7 @@ public class TrelloAttachment implements Attachment {
     public Attachment download() {
         try (var source = Channels.newChannel(getUrl().openStream());){
             var file = Files.createTempFile("trello", "attachment." + extension()).toFile();
+            LOG.info("Downloading " + file.getCanonicalPath());
             try (var channel = new FileOutputStream(file).getChannel()) {
                 channel.transferFrom(source, 0, Long.MAX_VALUE);
                 return new LocalAttachment(file);
