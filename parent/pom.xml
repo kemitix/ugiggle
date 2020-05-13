@@ -72,6 +72,11 @@
                 <artifactId>ugiggle-amazon-ses</artifactId>
                 <version>DEV-SNAPSHOT</version>
             </dependency>
+            <dependency>
+                <groupId>net.kemitix.ugiggle</groupId>
+                <artifactId>ugiggle-odt-converter</artifactId>
+                <version>DEV-SNAPSHOT</version>
+            </dependency>
 
             <dependency>
                 <groupId>org.junit</groupId>
