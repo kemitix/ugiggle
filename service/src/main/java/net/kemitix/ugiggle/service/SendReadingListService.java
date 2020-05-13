@@ -8,24 +8,17 @@ import java.io.IOException;
 @ApplicationScoped
 public class SendReadingListService {
 
-    private ReadingListService readingListService;
-    private EmailService emailService;
-
-    public SendReadingListService() {
-    }
-
     @Inject
-    public SendReadingListService(
-            ReadingListService readingListService,
-            EmailService emailService
-    ) {
-        this.readingListService = readingListService;
-        this.emailService = emailService;
-    }
+    ReadingListService readingListService;
+    @Inject
+    EmailService emailService;
+    @Inject
+    ConversionService conversionService;
 
     public void run(String[] args) {
         readingListService.getReadingList()
                 .flatMap(Submission::findAttachments)
+                .map(conversionService::convert)
                 .forEach(this::sendEmail);
     }
 
