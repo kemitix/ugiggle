@@ -45,9 +45,8 @@ public class AmazonSesService implements EmailService {
         String recipient = config.getRecipient();
         SendRawEmailRequest request = request(recipient, attachment);
         String name = attachment.getFileName().getName();
-        LOG.info(String.format("Sending %s to %s", name, recipient));
+        LOG.info(String.format("Sending %s", name));
         sesService.sendRawEmail(request);
-        LOG.info(String.format("Sent %s to %s", name, recipient));
     }
 
     private SendRawEmailRequest request(
@@ -88,8 +87,8 @@ public class AmazonSesService implements EmailService {
 
     private BodyPart attachment(Attachment attachment) throws MessagingException, IOException {
         MimeBodyPart mimeBodyPart = new MimeBodyPart();
-        File download = attachment.download();
-        mimeBodyPart.attachFile(download);
+        File fileName = attachment.download().getFileName();
+        mimeBodyPart.attachFile(fileName);
         mimeBodyPart.setFileName(attachment.getFileName().getName());
         return mimeBodyPart;
     }

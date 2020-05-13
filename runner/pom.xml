@@ -23,6 +23,10 @@
             <groupId>net.kemitix.ugiggle</groupId>
             <artifactId>ugiggle-amazon-ses</artifactId>
         </dependency>
+        <dependency>
+            <groupId>net.kemitix.ugiggle</groupId>
+            <artifactId>ugiggle-odt-converter</artifactId>
+        </dependency>
 
         <!-- quarkus -->
         <dependency>

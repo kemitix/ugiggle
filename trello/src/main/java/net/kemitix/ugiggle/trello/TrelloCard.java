@@ -1,38 +1,40 @@
 package net.kemitix.ugiggle.trello;
 
 import com.julienvey.trello.Trello;
+import com.julienvey.trello.domain.Card;
+import net.kemitix.ugiggle.service.AttachmentDirectory;
 import net.kemitix.ugiggle.service.Attachment;
 import net.kemitix.ugiggle.service.Submission;
-import net.kemitix.ugiggle.service.UGiggleConfig;
 
 import java.util.stream.Stream;
 
 public class TrelloCard implements Submission {
     private final com.julienvey.trello.domain.Card tcard;
     private final Trello trello;
-    private final UGiggleConfig config;
+    private AttachmentDirectory attachmentDir;
 
     private TrelloCard(
-            com.julienvey.trello.domain.Card tcard,
+            Card tcard,
             Trello trello,
-            UGiggleConfig config
+            AttachmentDirectory attachmentDir
     ) {
         this.tcard = tcard;
         this.trello = trello;
-        this.config = config;
+        this.attachmentDir = attachmentDir;
     }
 
     public static TrelloCard create(
-            com.julienvey.trello.domain.Card tcard,
+            Card tcard,
             Trello trello,
-            UGiggleConfig config
+            AttachmentDirectory attachmentDir
     ) {
-        return new TrelloCard(tcard, trello, config);
+        return new TrelloCard(tcard, trello, attachmentDir);
     }
 
     public Stream<Attachment> findAttachments() {
         return trello.getCardAttachments(tcard.getId()).stream()
-                .map(attachment -> TrelloAttachment.create(attachment, tcard));
+                .map(attachment -> TrelloAttachment
+                        .create(attachment, tcard, attachmentDir));
     }
 
     public String getName() {

@@ -11,6 +11,7 @@
         <module>runner</module>
         <module>trello</module>
         <module>amazon-ses</module>
+        <module>odt-converter</module>
     </modules>
 
     <groupId>net.kemitix.ugiggle</groupId>
