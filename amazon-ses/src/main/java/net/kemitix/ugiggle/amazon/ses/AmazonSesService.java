@@ -45,9 +45,8 @@ public class AmazonSesService implements EmailService {
         String recipient = config.getRecipient();
         SendRawEmailRequest request = request(recipient, attachment);
         String name = attachment.getFileName().getName();
-        LOG.info(String.format("Sending %s to %s", name, recipient));
+        LOG.info(String.format("Sending %s", name));
         sesService.sendRawEmail(request);
-        LOG.info(String.format("Sent %s to %s", name, recipient));
     }
 
     private SendRawEmailRequest request(
