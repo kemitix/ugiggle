@@ -47,6 +47,12 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
+                <groupId>jakarta.platform</groupId>
+                <artifactId>jakarta.jakartaee-api</artifactId>
+                <version>8.0.0</version>
+            </dependency>
+
+            <dependency>
                 <groupId>net.kemitix.ugiggle</groupId>
                 <artifactId>ugiggle-service</artifactId>
                 <version>${project.version}</version>
