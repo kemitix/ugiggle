@@ -1,4 +1,4 @@
-package net.kemitix.ugiggle;
+package net.kemitix.ugiggle.service;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;

@@ -4,7 +4,7 @@ import com.julienvey.trello.Trello;
 import com.julienvey.trello.domain.Board;
 import com.julienvey.trello.domain.Card;
 import com.julienvey.trello.domain.TList;
-import net.kemitix.ugiggle.AttachmentDirectory;
+import net.kemitix.ugiggle.service.AttachmentDirectory;
 import net.kemitix.ugiggle.service.Submission;
 import net.kemitix.ugiggle.service.ReadingListService;
 import net.kemitix.ugiggle.service.UGiggleConfig;

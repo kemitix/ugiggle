@@ -2,10 +2,9 @@ package net.kemitix.ugiggle.trello;
 
 import com.julienvey.trello.Trello;
 import com.julienvey.trello.domain.Card;
-import net.kemitix.ugiggle.AttachmentDirectory;
+import net.kemitix.ugiggle.service.AttachmentDirectory;
 import net.kemitix.ugiggle.service.Attachment;
 import net.kemitix.ugiggle.service.Submission;
-import net.kemitix.ugiggle.service.UGiggleConfig;
 
 import java.util.stream.Stream;
 
