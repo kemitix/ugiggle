@@ -52,7 +52,7 @@ public class TrelloAttachment implements Attachment {
     @Override
     public Attachment download() {
         try (var source = Channels.newChannel(getUrl().openStream());){
-            var file = Files.createTempFile("trello", "attachment").toFile();
+            var file = Files.createTempFile("trello", "attachment." + extension()).toFile();
             try (var channel = new FileOutputStream(file).getChannel()) {
                 channel.transferFrom(source, 0, Long.MAX_VALUE);
                 return new LocalAttachment(file);
