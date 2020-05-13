@@ -24,6 +24,12 @@
             <groupId>fr.opensagres.xdocreport</groupId>
             <artifactId>org.odftoolkit.odfdom.converter.xhtml</artifactId>
             <version>1.0.6</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>xml-apis</groupId>
+                    <artifactId>xml-apis</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>net.kemitix.ugiggle</groupId>
