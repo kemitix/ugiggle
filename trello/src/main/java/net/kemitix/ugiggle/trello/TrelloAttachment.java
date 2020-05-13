@@ -2,6 +2,7 @@ package net.kemitix.ugiggle.trello;
 
 import com.julienvey.trello.domain.Card;
 import net.kemitix.ugiggle.service.Attachment;
+import net.kemitix.ugiggle.service.LocalAttachment;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -11,8 +12,6 @@ import java.net.URI;
 import java.net.URL;
 import java.nio.channels.Channels;
 import java.nio.file.Files;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class TrelloAttachment implements Attachment {
     private static final String[] EXTENSIONS = new String[]{"doc", "docx", "odt"};
@@ -51,12 +50,12 @@ public class TrelloAttachment implements Attachment {
     }
 
     @Override
-    public File download() {
+    public Attachment download() {
         try (var source = Channels.newChannel(getUrl().openStream());){
             var file = Files.createTempFile("trello", "attachment").toFile();
             try (var channel = new FileOutputStream(file).getChannel()) {
                 channel.transferFrom(source, 0, Long.MAX_VALUE);
-                return file;
+                return new LocalAttachment(file);
             }
         } catch (IOException e) {
             throw new RuntimeException(e);

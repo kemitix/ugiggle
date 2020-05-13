@@ -87,8 +87,8 @@ public class AmazonSesService implements EmailService {
 
     private BodyPart attachment(Attachment attachment) throws MessagingException, IOException {
         MimeBodyPart mimeBodyPart = new MimeBodyPart();
-        File download = attachment.download();
-        mimeBodyPart.attachFile(download);
+        File fileName = attachment.download().getFileName();
+        mimeBodyPart.attachFile(fileName);
         mimeBodyPart.setFileName(attachment.getFileName().getName());
         return mimeBodyPart;
     }
