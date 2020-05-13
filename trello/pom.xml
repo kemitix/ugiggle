@@ -6,7 +6,7 @@
         <groupId>net.kemitix.ugiggle</groupId>
         <artifactId>ugiggle-parent</artifactId>
         <relativePath>../parent</relativePath>
-        <version>DEV-SNAPSHOT</version>
+        <version>1.1.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
