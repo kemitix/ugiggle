@@ -1,11 +1,11 @@
 package net.kemitix.ugiggle.converter.odt;
 
-import fr.opensagres.odfdom.converter.xhtml.XHTMLConverter;
-import fr.opensagres.odfdom.converter.xhtml.XHTMLOptions;
 import net.kemitix.ugiggle.service.AttachmentDirectory;
 import net.kemitix.ugiggle.service.Attachment;
 import net.kemitix.ugiggle.service.AttachmentConverter;
 import net.kemitix.ugiggle.service.LocalAttachment;
+import org.odftoolkit.odfdom.converter.xhtml.XHTMLConverter;
+import org.odftoolkit.odfdom.converter.xhtml.XHTMLOptions;
 import org.odftoolkit.odfdom.doc.OdfTextDocument;
 
 import javax.enterprise.context.ApplicationScoped;
