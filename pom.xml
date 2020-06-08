@@ -43,8 +43,11 @@
                     </execution>
                 </executions>
                 <configuration>
+                    <direction>LR</direction>
                     <hideTransitive>true</hideTransitive>
                     <hideVersion>true</hideVersion>
+                    <hideScopes>test,provided</hideScopes>
+                    <hideOptional>true</hideOptional>
                     <target>${project.basedir}/doc/images/reactor-graph.png</target>
                 </configuration>
             </plugin>
