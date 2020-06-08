@@ -12,6 +12,7 @@ import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URL;
 import java.nio.channels.Channels;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Logger;
 
 public class TrelloAttachment implements Attachment {
@@ -21,9 +22,11 @@ public class TrelloAttachment implements Attachment {
                     TrelloAttachment.class.getName());
 
     private static final String[] EXTENSIONS = new String[]{"doc", "docx", "odt"};
+    private static final AtomicInteger SEQUENCE_COUNTER = new AtomicInteger();
     private final com.julienvey.trello.domain.Attachment attachment;
     private final Card card;
     private final AttachmentDirectory attachmentDirectory;
+    private final int sequence;
 
     private TrelloAttachment(
             com.julienvey.trello.domain.Attachment attachment,
@@ -33,6 +36,7 @@ public class TrelloAttachment implements Attachment {
         this.attachment = attachment;
         this.card = card;
         this.attachmentDirectory = attachmentDirectory;
+        this.sequence = SEQUENCE_COUNTER.incrementAndGet();
     }
 
     public static Attachment create(
@@ -45,7 +49,8 @@ public class TrelloAttachment implements Attachment {
 
     @Override
     public File getFileName() {
-        return new File(String.format("%s.%s", card.getName(), extension()));
+        return new File(String.format("%2d - %s.%s",
+                sequence, card.getName(), extension()));
     }
 
     private String extension() {
