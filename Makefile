@@ -1,4 +1,4 @@
-VERSION=DEV-SNAPSHOT
+VERSION=1.2.0
 
 install:
 	mvn install

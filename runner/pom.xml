@@ -5,10 +5,10 @@
     <parent>
         <groupId>net.kemitix.ugiggle</groupId>
         <artifactId>ugiggle-parent</artifactId>
-        <version>DEV-SNAPSHOT</version>
+        <version>1.2.0</version>
         <relativePath>../parent</relativePath>
     </parent>
-    <version>DEV-SNAPSHOT</version>
+    <version>1.2.0</version>
 
     <artifactId>ugiggle-runner</artifactId>
     <name>runner</name>
