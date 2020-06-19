@@ -40,7 +40,7 @@
         <java.version>11</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
-        <quarkus.version>1.5.1.Final</quarkus.version>
+        <quarkus.version>1.5.2.Final</quarkus.version>
 
         <surefire-plugin.version>2.22.2</surefire-plugin.version>
         <!-- disabled until there is some code to mutate -->
