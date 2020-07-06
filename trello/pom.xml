@@ -15,7 +15,7 @@
 
     <properties>
         <pitest.skip>true</pitest.skip>
-        <trello-java-wrapper.version>0.13</trello-java-wrapper.version>
+        <trello-java-wrapper.version>0.14</trello-java-wrapper.version>
     </properties>
 
     <dependencies>
