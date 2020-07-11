@@ -9,6 +9,10 @@ Send trello cards, with attachments, via email. Used to send slush to my kindle.
 * `UGIGGLE_RECIPIENT` - Email to send attachments to
 * `UGIGGLE_SENDER` - Email to send from
 
+## Requirements
+
+* JDK 11+
+
 ## Structure/Dependencies
 
 ![modules](doc/images/reactor-graph.png)
