@@ -26,11 +26,6 @@
         </dependency>
 
         <dependency>
-            <groupId>net.kemitix.ugiggle</groupId>
-            <artifactId>ugiggle-service</artifactId>
-        </dependency>
-
-        <dependency>
             <groupId>com.taskadapter</groupId>
             <artifactId>trello-java-wrapper</artifactId>
             <version>${trello-java-wrapper.version}</version>

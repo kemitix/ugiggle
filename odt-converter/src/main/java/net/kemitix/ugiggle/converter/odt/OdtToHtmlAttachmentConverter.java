@@ -1,9 +1,9 @@
 package net.kemitix.ugiggle.converter.odt;
 
-import net.kemitix.ugiggle.service.AttachmentDirectory;
-import net.kemitix.ugiggle.service.Attachment;
+import net.kemitix.ugiggle.trello.AttachmentDirectory;
+import net.kemitix.ugiggle.trello.Attachment;
 import net.kemitix.ugiggle.service.AttachmentConverter;
-import net.kemitix.ugiggle.service.LocalAttachment;
+import net.kemitix.ugiggle.trello.LocalAttachment;
 import org.odftoolkit.odfdom.converter.xhtml.XHTMLConverter;
 import org.odftoolkit.odfdom.converter.xhtml.XHTMLOptions;
 import org.odftoolkit.odfdom.doc.OdfTextDocument;

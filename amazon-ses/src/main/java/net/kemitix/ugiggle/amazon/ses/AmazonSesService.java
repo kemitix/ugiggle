@@ -2,7 +2,7 @@ package net.kemitix.ugiggle.amazon.ses;
 
 import com.amazonaws.services.simpleemail.AmazonSimpleEmailService;
 import com.amazonaws.services.simpleemail.model.*;
-import net.kemitix.ugiggle.service.Attachment;
+import net.kemitix.ugiggle.trello.Attachment;
 import net.kemitix.ugiggle.service.EmailService;
 import net.kemitix.ugiggle.service.UGiggleConfig;
 

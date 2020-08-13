@@ -1,9 +1,6 @@
 package net.kemitix.ugiggle.trello;
 
 import com.julienvey.trello.domain.Card;
-import net.kemitix.ugiggle.service.AttachmentDirectory;
-import net.kemitix.ugiggle.service.Attachment;
-import net.kemitix.ugiggle.service.LocalAttachment;
 
 import java.io.File;
 import java.io.FileOutputStream;

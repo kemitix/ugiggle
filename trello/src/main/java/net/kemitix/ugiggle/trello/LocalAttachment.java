@@ -1,4 +1,6 @@
-package net.kemitix.ugiggle.service;
+package net.kemitix.ugiggle.trello;
+
+import net.kemitix.ugiggle.trello.Attachment;
 
 import java.io.File;
 

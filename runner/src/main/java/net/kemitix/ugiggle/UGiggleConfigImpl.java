@@ -2,9 +2,10 @@ package net.kemitix.ugiggle;
 
 import io.quarkus.arc.config.ConfigProperties;
 import net.kemitix.ugiggle.service.UGiggleConfig;
+import net.kemitix.ugiggle.trello.TrelloConfig;
 
 @ConfigProperties(prefix = "ugiggle")
-public class UGiggleConfigImpl implements UGiggleConfig {
+public class UGiggleConfigImpl implements UGiggleConfig, TrelloConfig {
     private String slushBoard;
     private String slushList;
     private String recipient;

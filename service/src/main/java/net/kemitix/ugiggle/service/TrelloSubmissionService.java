@@ -1,13 +1,11 @@
-package net.kemitix.ugiggle.trello;
+package net.kemitix.ugiggle.service;
 
 import com.julienvey.trello.Trello;
 import com.julienvey.trello.domain.Board;
 import com.julienvey.trello.domain.Card;
 import com.julienvey.trello.domain.TList;
-import net.kemitix.ugiggle.service.AttachmentDirectory;
-import net.kemitix.ugiggle.service.Submission;
-import net.kemitix.ugiggle.service.ReadingListService;
-import net.kemitix.ugiggle.service.UGiggleConfig;
+import net.kemitix.ugiggle.trello.AttachmentDirectory;
+import net.kemitix.ugiggle.trello.TrelloCard;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
@@ -29,7 +27,7 @@ public class TrelloSubmissionService implements ReadingListService {
     AttachmentDirectory attachmentDir;
 
     @Override
-    public Stream<? extends Submission> getReadingList() {
+    public Stream<TrelloCard> getReadingList() {
         String board = config.getSlushBoard();
         String list = config.getSlushList();
         return findBoard(board)

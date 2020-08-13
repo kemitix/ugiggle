@@ -1,4 +1,4 @@
-package net.kemitix.ugiggle.service;
+package net.kemitix.ugiggle.trello;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;

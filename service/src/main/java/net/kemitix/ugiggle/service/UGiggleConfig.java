@@ -10,10 +10,6 @@ public interface UGiggleConfig {
 
     String getTargetName();
 
-    String getTrelloKey();
-
-    String getTrelloAccessToken();
-
     String getAmazonSesRegion();
 
     String getSender();

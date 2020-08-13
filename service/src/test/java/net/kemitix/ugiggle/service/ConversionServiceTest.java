@@ -1,7 +1,7 @@
 package net.kemitix.ugiggle.service;
 
+import net.kemitix.ugiggle.trello.Attachment;
 import org.assertj.core.api.WithAssertions;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
