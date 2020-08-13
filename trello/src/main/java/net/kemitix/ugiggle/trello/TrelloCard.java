@@ -2,13 +2,10 @@ package net.kemitix.ugiggle.trello;
 
 import com.julienvey.trello.Trello;
 import com.julienvey.trello.domain.Card;
-import net.kemitix.ugiggle.service.AttachmentDirectory;
-import net.kemitix.ugiggle.service.Attachment;
-import net.kemitix.ugiggle.service.Submission;
 
 import java.util.stream.Stream;
 
-public class TrelloCard implements Submission {
+public class TrelloCard {
     private final com.julienvey.trello.domain.Card tcard;
     private final Trello trello;
     private AttachmentDirectory attachmentDir;

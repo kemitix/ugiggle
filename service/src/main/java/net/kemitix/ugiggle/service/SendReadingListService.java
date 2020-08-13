@@ -1,5 +1,8 @@
 package net.kemitix.ugiggle.service;
 
+import net.kemitix.ugiggle.trello.Attachment;
+import net.kemitix.ugiggle.trello.TrelloCard;
+
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.mail.MessagingException;
@@ -17,7 +20,7 @@ public class SendReadingListService {
 
     public void run(String[] args) {
         readingListService.getReadingList()
-                .flatMap(Submission::findAttachments)
+                .flatMap(TrelloCard::findAttachments)
                 .map(conversionService::convert)
                 .forEach(this::sendEmail);
     }
