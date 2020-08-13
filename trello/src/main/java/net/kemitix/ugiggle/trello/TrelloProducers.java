@@ -20,7 +20,7 @@ public class TrelloProducers {
     @Produces
     @ApplicationScoped
     Trello trello(
-            UGiggleConfig config,
+            TrelloConfig config,
             TrelloHttpClient httpClient
     ) {
         return new TrelloImpl(
